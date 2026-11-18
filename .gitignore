@@ -1,0 +1,112 @@
+# ==============================================================================
+# SINERGI (nerasync-dashboard) — .gitignore
+# Aturan Pengecualian Berkas Repositori Git Monorepo Publik
+# Selaras dengan PRD.md, ARCHITECTURE.md, dan GIT_WORKFLOW.md
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. DOKUMENTASI INTERNAL & ARTEFAK PROYEK (Permintaan Khusus)
+# ------------------------------------------------------------------------------
+docs/
+*.draft.md
+
+# ------------------------------------------------------------------------------
+# 2. KEAMANAN & RAHASIA (Zero Secret Policy - ADR-06 & GIT_WORKFLOW.md §1.1)
+# ------------------------------------------------------------------------------
+# Berkas Environment Variables Lokal
+.env
+.env.*
+!.env.example
+
+# Tautan Sumber Spreadsheet Asli & Kredensial Akses
+link.md
+docs/link.md
+
+# Kunci Kriptografi, Sertifikat, & Token
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+
+# Kredensial Google Service Account & GCP OAuth
+*-service-account.json
+service-account*.json
+credentials.json
+client_secret*.json
+
+# ------------------------------------------------------------------------------
+# 3. DEPENDENSI & ARTEFAK KOMPILASI (Node.js, Next.js, Cloudflare OpenNext)
+# ------------------------------------------------------------------------------
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Next.js & OpenNext Cloudflare Build
+.next/
+out/
+build/
+dist/
+.open-next/
+.turbo/
+.cache/
+
+# ------------------------------------------------------------------------------
+# 4. ARTEFAK KOMPILASI BACKEND & WORKER (Go / Koyeb / CLI)
+# ------------------------------------------------------------------------------
+# Biner Go & File Eksekusi
+bin/
+tmp/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# ------------------------------------------------------------------------------
+# 5. PENGUJIAN & COVERAGE
+# ------------------------------------------------------------------------------
+coverage/
+coverage.out
+coverage.html
+*.lcov
+.nyc_output/
+
+# ------------------------------------------------------------------------------
+# 6. LOG & BERKAS SEMENTARA
+# ------------------------------------------------------------------------------
+logs/
+*.log
+
+# ------------------------------------------------------------------------------
+# 7. SISTEM OPERASI & INTEGRATED DEVELOPMENT ENVIRONMENT (IDE)
+# ------------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# JetBrains (WebStorm, GoLand, IntelliJ)
+.idea/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Editor Cadangan & Swap
+*.swp
+*.swo
+*~
