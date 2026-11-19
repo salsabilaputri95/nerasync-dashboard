@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SINERGI Design System — Palet Warna & Background</title>
+  <style>
+    :root {
+      /* Tokens dari docs/DESIGN_SYSTEM.md */
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      
+      /* Light mode defaults */
+      --page-bg: #F8FAFC;
+      --page-surface: #FFFFFF;
+      --page-surface-alt: #F1F5F9;
+      --page-text-primary: #0F172A;
+      --page-text-secondary: #334155;
+      --page-text-muted: #64748B;
+      --page-border: #E2E8F0;
+      --page-border-strong: #64748B;
+      --page-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    body.dark-mode {
+      --page-bg: #0B1120;
+      --page-surface: #111827;
+      --page-surface-alt: #1E293B;
+      --page-text-primary: #F8FAFC;
+      --page-text-secondary: #CBD5E1;
+      --page-text-muted: #94A3B8;
+      --page-border: #1E293B;
+      --page-border-strong: #64748B;
+      --page-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--page-bg);
+      color: var(--page-text-primary);
+      line-height: 1.5;
+      padding: 32px 24px;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    /* Header Bar */
+    header {
+      background: var(--page-surface);
+      border: 1px solid var(--page-border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      box-shadow: var(--page-shadow);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .header-info h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-src {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 8px;
+      border-radius: 9999px;
+      background: #EFF6FF;
+      color: #004A8F;
+      border: 1px solid #BFDBFE;
+    }
+
+    body.dark-mode .badge-src {
+      background: #1E3A5F;
+      color: #93C5FD;
+      border-color: #2563EB;
+    }
+
+    .header-info p {
+      font-size: 14px;
+      color: var(--page-text-secondary);
+      margin-top: 4px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .theme-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: inherit;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid var(--page-border-strong);
+      background: var(--page-surface);
+      color: var(--page-text-primary);
+      transition: all 0.2s ease;
+    }
+
+    .theme-toggle-btn:hover {
+      background: var(--page-surface-alt);
+    }
+
+    /* Section styling */
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--page-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--page-text-muted);
+    }
+
+    /* Special Highlight Box for Backgrounds */
+    .bg-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .bg-showcase-card {
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .bg-showcase-card .tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-block;
+      margin-bottom: 8px;
+      opacity: 0.85;
+    }
+
+    .bg-showcase-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .bg-showcase-card .hex-code {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .bg-showcase-card p {
+      font-size: 12px;
+      line-height: 1.4;
+      opacity: 0.85;
+    }
+
+    /* General Swatches Grid */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .color-card {
+      background: var(--page-surface);
+      border: 1px solid var(--page-border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--page-shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .color-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+    }
+
+    .color-swatch-box {
+      height: 100px;
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 8px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    /* Hairline border for light swatches so they don't blend with white card */
+    .color-swatch-box::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border: 1px solid rgba(0,0,0,0.06);
+      pointer-events: none;
+    }
+
+    .color-card-body {
+      padding: 14px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .color-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--page-text-primary);
+      margin-bottom: 2px;
+    }
+
+    .color-token {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--page-text-muted);
+      margin-bottom: 8px;
+    }
+
+    .color-hex-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--page-surface-alt);
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--page-border);
+      margin-bottom: 8px;
+      cursor: pointer;
+      user-select: all;
+    }
+
+    .color-hex {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--page-text-primary);
+      letter-spacing: 0.02em;
+    }
+
+    .copy-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--page-text-muted);
+      font-family: inherit;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    .color-hex-row:hover .copy-btn {
+      color: #004A8F;
+    }
+
+    .color-desc {
+      font-size: 11px;
+      color: var(--page-text-secondary);
+      line-height: 1.4;
+      margin-top: auto;
+    }
+
+    .badge-contrast {
+      font-size: 10px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.45);
+      color: #FFFFFF;
+      backdrop-filter: blur(2px);
+    }
+
+    /* Quick Toast */
+    #copy-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0F172A;
+      color: #FFFFFF;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      pointer-events: none;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #copy-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Top Header -->
+    <header>
+      <div class="header-info">
+        <h1>
+          SINERGI Color Palette & Tokens
+          <span class="badge-src">docs/DESIGN_SYSTEM.md</span>
+        </h1>
+        <p>Spesifikasi resmi palet warna visual, token semantik (Light & Dark), warna background, dan palet grafik ECharts.</p>
+      </div>
+      <div class="controls">
+        <button id="themeToggle" class="theme-toggle-btn" onclick="toggleTheme()">
+          <span id="themeIcon">🌙</span>
+          <span id="themeLabel">Ubah Latar ke Mode Gelap</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- SECTION 1: WARNA BACKGROUND & PERMUKAAN -->
+    <div class="section-title">
+      <span>1. Warna Background & Permukaan (*Canvas & Surfaces*)</span>
+      <span class="section-subtitle">Fondasi kontras latar belakang halaman, kartu, tabel, dan modal</span>
+    </div>
+
+    <!-- Live Showcase of Backgrounds -->
+    <div class="bg-showcase-grid">
+      <!-- Light Canvas -->
+      <div class="bg-showcase-card" style="background-color: #F8FAFC; color: #0F172A; border-color: #CBD5E1;">
+        <div>
+          <span class="tag" style="background: #E2E8F0; color: #0F172A; padding: 2px 6px; border-radius: 4px;">Light Mode Canvas</span>
+          <h3>Canvas Background</h3>
+          <div class="hex-code">#F8FAFC</div>
+          <div style="font-family: var(--font-mono); font-size: 12px; margin-bottom: 8px; opacity: 0.75;">--ui-bg</div>
+        </div>
+        <p>Latar belakang utama seluruh halaman web (<code>&lt;body&gt;</code>) pada mode terang. Mengurangi ketegangan mata dibandingkan putih murni <code>#FFFFFF</code>.</p>
+      </div>
+
+      <!-- Light Card Surface -->
+      <div class="bg-showcase-card" style="background-color: #FFFFFF; color: #0F172A; border-color: #E2E8F0;">
+        <div>
+          <span class="tag" style="background: #F1F5F9; color: #334155; padding: 2px 6px; border-radius: 4px;">Light Mode Surface</span>
+          <h3>Card & Modal Surface</h3>
+          <div class="hex-code">#FFFFFF</div>
+          <div style="font-family: var(--font-mono); font-size: 12px; margin-bottom: 8px; opacity: 0.75;">--ui-surface</div>
+        </div>
+        <p>Latar kontainer kartu KPI makro, panel grafik ECharts, kontainer tabel data, dropdown popover, dan dialog modal.</p>
+      </div>
+
+      <!-- Light Alt Surface -->
+      <div class="bg-showcase-card" style="background-color: #F1F5F9; color: #0F172A; border-color: #CBD5E1;">
+        <div>
+          <span class="tag" style="background: #E2E8F0; color: #334155; padding: 2px 6px; border-radius: 4px;">Light Mode Alt</span>
+          <h3>Surface Alternate</h3>
+          <div class="hex-code">#F1F5F9</div>
+          <div style="font-family: var(--font-mono); font-size: 12px; margin-bottom: 8px; opacity: 0.75;">--ui-surface-alt</div>
+        </div>
+        <p>Latar header tabel <em>sticky</em>, baris zebra halus tabel, toolbar filter sekunder, dan state hover item list.</p>
+      </div>
+
+      <!-- Dark Canvas -->
+      <div class="bg-showcase-card" style="background-color: #0B1120; color: #F8FAFC; border-color: #1E293B;">
+        <div>
+          <span class="tag" style="background: #1E293B; color: #94A3B8; padding: 2px 6px; border-radius: 4px;">Dark Mode Canvas</span>
+          <h3>Dark Canvas Background</h3>
+          <div class="hex-code">#0B1120</div>
+          <div style="font-family: var(--font-mono); font-size: 12px; margin-bottom: 8px; opacity: 0.75;">--ui-bg (dark)</div>
+        </div>
+        <p>Latar belakang utama seluruh halaman pada mode gelap. Warna *deep navy slate* yang elegan dan ramah baterai OLED.</p>
+      </div>
+
+      <!-- Dark Card Surface -->
+      <div class="bg-showcase-card" style="background-color: #111827; color: #F8FAFC; border-color: #374151;">
+        <div>
+          <span class="tag" style="background: #1F2937; color: #D1D5DB; padding: 2px 6px; border-radius: 4px;">Dark Mode Surface</span>
+          <h3>Dark Card & Modal</h3>
+          <div class="hex-code">#111827</div>
+          <div style="font-family: var(--font-mono); font-size: 12px; margin-bottom: 8px; opacity: 0.75;">--ui-surface (dark)</div>
+        </div>
+        <p>Latar kartu KPI, panel grafik, dan modal pada mode gelap. Kontras tinggi terhadap teks terang <code>#F8FAFC</code> (18:1).</p>
+      </div>
+
+      <!-- Dark Alt Surface -->
+      <div class="bg-showcase-card" style="background-color: #1E293B; color: #F8FAFC; border-color: #475569;">
+        <div>
+          <span class="tag" style="background: #334155; color: #E2E8F0; padding: 2px 6px; border-radius: 4px;">Dark Mode Alt</span>
+          <h3>Dark Surface Alt</h3>
+          <div class="hex-code">#1E293B</div>
+          <div style="font-family: var(--font-mono); font-size: 12px; margin-bottom: 8px; opacity: 0.75;">--ui-surface-alt (dark)</div>
+        </div>
+        <p>Header tabel, kontainer filter, dan hover baris tabel di mode gelap.</p>
+      </div>
+    </div>
+
+
+    <!-- SECTION 2: WARNA IDENTITAS UTAMA (PRIMARY, SECONDARY, ACCENT) -->
+    <div class="section-title">
+      <span>2. Warna Identitas & Aksi Utama (*Triad Brand BPS*)</span>
+      <span class="section-subtitle">Tombol aksi, seri data dominan, tautan aktif, dan penekanan grafik</span>
+    </div>
+
+    <div class="palette-grid">
+      <!-- Primary Light -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #004A8F;">
+          <span class="badge-contrast">8.84:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Primary (Biru BPS)</div>
+          <div class="color-token">--ui-primary (Light)</div>
+          <div class="color-hex-row" onclick="copyHex('#004A8F')">
+            <span class="color-hex">#004A8F</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Tombol aksi utama, tautan aktif, sektor terbesar grafik, fokus utama.</div>
+        </div>
+      </div>
+
+      <!-- Primary Hover Light -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #003A70;">
+          <span class="badge-contrast">11.4:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Primary Hover</div>
+          <div class="color-token">--ui-primary-hover (Light)</div>
+          <div class="color-hex-row" onclick="copyHex('#003A70')">
+            <span class="color-hex">#003A70</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">State :hover tombol primer dan tautan aktif.</div>
+        </div>
+      </div>
+
+      <!-- Primary Subtle Light -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #EFF6FF;"></div>
+        <div class="color-card-body">
+          <div class="color-name">Primary Subtle (Latar)</div>
+          <div class="color-token">--ui-primary-subtle (Light)</div>
+          <div class="color-hex-row" onclick="copyHex('#EFF6FF')">
+            <span class="color-hex">#EFF6FF</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Latar row highlight pada tabel saat klik diagram, badge dataset.</div>
+        </div>
+      </div>
+
+      <!-- Primary Dark -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #60A5FA;">
+          <span class="badge-contrast">6.98:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Primary Dark Mode</div>
+          <div class="color-token">--ui-primary (Dark)</div>
+          <div class="color-hex-row" onclick="copyHex('#60A5FA')">
+            <span class="color-hex">#60A5FA</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Warna primer di mode gelap (Blue 400) untuk menjaga kontras di latar hitam.</div>
+        </div>
+      </div>
+
+      <!-- Secondary Light -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #15803D;">
+          <span class="badge-contrast">5.02:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Secondary (Hijau Statistik)</div>
+          <div class="color-token">--ui-secondary (Light)</div>
+          <div class="color-hex-row" onclick="copyHex('#15803D')">
+            <span class="color-hex">#15803D</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Aksen sekunder BPS, seri pembanding kedua grafik combo, tombol Download.</div>
+        </div>
+      </div>
+
+      <!-- Secondary Dark -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #34D399;">
+          <span class="badge-contrast">9.23:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Secondary Dark Mode</div>
+          <div class="color-token">--ui-secondary (Dark)</div>
+          <div class="color-hex-row" onclick="copyHex('#34D399')">
+            <span class="color-hex">#34D399</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Aksen hijau cerah (Emerald 400) untuk dark mode.</div>
+        </div>
+      </div>
+
+      <!-- Accent Light -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #C2410C;">
+          <span class="badge-contrast">5.18:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Accent (Oranye Sorotan)</div>
+          <div class="color-token">--ui-accent (Light)</div>
+          <div class="color-hex-row" onclick="copyHex('#C2410C')">
+            <span class="color-hex">#C2410C</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Garis laju pertumbuhan grafik combo atau penanda sorotan khusus (&le; 10% layar).</div>
+        </div>
+      </div>
+
+      <!-- Accent Dark -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #FB923C;">
+          <span class="badge-contrast">7.50:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Accent Dark Mode</div>
+          <div class="color-token">--ui-accent (Dark)</div>
+          <div class="color-hex-row" onclick="copyHex('#FB923C')">
+            <span class="color-hex">#FB923C</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Sorotan oranye di mode gelap (Orange 400).</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- SECTION 3: WARNA TEKS & GARIS NETRAL -->
+    <div class="section-title">
+      <span>3. Warna Teks, Border, & Kontrol Netral</span>
+      <span class="section-subtitle">Hierarki tipografi angka statistik dan batas kontrol</span>
+    </div>
+
+    <div class="palette-grid">
+      <!-- Text Primary Light -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #0F172A;">
+          <span class="badge-contrast">17.8:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Text Primary (Light)</div>
+          <div class="color-token">--ui-text-primary</div>
+          <div class="color-hex-row" onclick="copyHex('#0F172A')">
+            <span class="color-hex">#0F172A</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Judul utama, angka KPI makro, teks tebal angka tabel statistik.</div>
+        </div>
+      </div>
+
+      <!-- Text Secondary Light -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #334155;">
+          <span class="badge-contrast">10.3:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Text Secondary (Light)</div>
+          <div class="color-token">--ui-text-secondary</div>
+          <div class="color-hex-row" onclick="copyHex('#334155')">
+            <span class="color-hex">#334155</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Label sektor, nama indikator, teks penjelasan metodologi.</div>
+        </div>
+      </div>
+
+      <!-- Text Muted Light -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #64748B;">
+          <span class="badge-contrast">4.76:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Text Muted (Light)</div>
+          <div class="color-token">--ui-text-muted</div>
+          <div class="color-hex-row" onclick="copyHex('#64748B')">
+            <span class="color-hex">#64748B</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Catatan kaki "Sumber: BPS", unit satuan, tanggal rilis, placeholder.</div>
+        </div>
+      </div>
+
+      <!-- Border Subtle -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #E2E8F0;"></div>
+        <div class="color-card-body">
+          <div class="color-name">Border Subtle (Light)</div>
+          <div class="color-token">--ui-border</div>
+          <div class="color-hex-row" onclick="copyHex('#E2E8F0')">
+            <span class="color-hex">#E2E8F0</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Garis pemisah baris tabel dan batas kartu standar.</div>
+        </div>
+      </div>
+
+      <!-- Border Strong / Control -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #64748B;">
+          <span class="badge-contrast">&ge; 3.0:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Border Strong (Kontrol)</div>
+          <div class="color-token">--ui-border-strong</div>
+          <div class="color-hex-row" onclick="copyHex('#64748B')">
+            <span class="color-hex">#64748B</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Batas kotak form Select, Input, Checkbox, tombol outline (WCAG AA).</div>
+        </div>
+      </div>
+
+      <!-- Text Primary Dark -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #F8FAFC;">
+          <span class="badge-contrast">18.0:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Text Primary (Dark)</div>
+          <div class="color-token">--ui-text-primary (Dark)</div>
+          <div class="color-hex-row" onclick="copyHex('#F8FAFC')">
+            <span class="color-hex">#F8FAFC</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Teks utama di latar gelap.</div>
+        </div>
+      </div>
+
+      <!-- Text Secondary Dark -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #CBD5E1;">
+          <span class="badge-contrast">11.9:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Text Secondary (Dark)</div>
+          <div class="color-token">--ui-text-secondary (Dark)</div>
+          <div class="color-hex-row" onclick="copyHex('#CBD5E1')">
+            <span class="color-hex">#CBD5E1</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Label dan paragraf di mode gelap.</div>
+        </div>
+      </div>
+
+      <!-- Text Muted Dark -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #94A3B8;">
+          <span class="badge-contrast">6.92:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Text Muted (Dark)</div>
+          <div class="color-token">--ui-text-muted (Dark)</div>
+          <div class="color-hex-row" onclick="copyHex('#94A3B8')">
+            <span class="color-hex">#94A3B8</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Keterangan unit dan catatan kaki di mode gelap.</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- SECTION 4: WARNA STATUS SEMANTIK & PENANDA NERACA -->
+    <div class="section-title">
+      <span>4. Warna Status Semantik & Penanda Angka Neraca</span>
+      <span class="section-subtitle">Wajib dipasangkan dengan simbol non-warna (▲, ▼, *, **, r)</span>
+    </div>
+
+    <div class="palette-grid">
+      <!-- Success Text -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #046C4E;">
+          <span class="badge-contrast">6.11:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Success / Naik (▲)</div>
+          <div class="color-token">--ui-status-success</div>
+          <div class="color-hex-row" onclick="copyHex('#046C4E')">
+            <span class="color-hex">#046C4E</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Teks pertumbuhan positif (▲ +5,12%), status PUBLISHED / SUCCESS.</div>
+        </div>
+      </div>
+
+      <!-- Success Badge Fill -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #ECFDF5;"></div>
+        <div class="color-card-body">
+          <div class="color-name">Success Badge Fill</div>
+          <div class="color-token">--ui-status-success-bg</div>
+          <div class="color-hex-row" onclick="copyHex('#ECFDF5')">
+            <span class="color-hex">#ECFDF5</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Latar belakang chip status pertumbuhan positif & sukses sinkronisasi.</div>
+        </div>
+      </div>
+
+      <!-- Warning Text -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #B45309;">
+          <span class="badge-contrast">4.51:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Warning / Sementara (*)</div>
+          <div class="color-token">--ui-status-warning</div>
+          <div class="color-hex-row" onclick="copyHex('#B45309')">
+            <span class="color-hex">#B45309</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Teks angka berstatus sementara (*), NEEDS_REVIEW, stale cache.</div>
+        </div>
+      </div>
+
+      <!-- Warning Badge Fill -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #FEF3C7;"></div>
+        <div class="color-card-body">
+          <div class="color-name">Warning Badge Fill</div>
+          <div class="color-token">--ui-status-warning-bg</div>
+          <div class="color-hex-row" onclick="copyHex('#FEF3C7')">
+            <span class="color-hex">#FEF3C7</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Latar belakang chip penanda angka sementara (*).</div>
+        </div>
+      </div>
+
+      <!-- Error Text -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #C81E1E;">
+          <span class="badge-contrast">5.24:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Error / Kontraksi (▼)</div>
+          <div class="color-token">--ui-status-error</div>
+          <div class="color-hex-row" onclick="copyHex('#C81E1E')">
+            <span class="color-hex">#C81E1E</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Laju negatif (▼ -1,2%), galat validasi formula neraca, status FAILED.</div>
+        </div>
+      </div>
+
+      <!-- Error Badge Fill -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #FEF2F2;"></div>
+        <div class="color-card-body">
+          <div class="color-name">Error Badge Fill</div>
+          <div class="color-token">--ui-status-error-bg</div>
+          <div class="color-hex-row" onclick="copyHex('#FEF2F2')">
+            <span class="color-hex">#FEF2F2</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Latar chip angka kontraksi negatif atau pesan error validasi.</div>
+        </div>
+      </div>
+
+      <!-- Info Text -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #0369A1;">
+          <span class="badge-contrast">5.57:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Info / Revisi (r)</div>
+          <div class="color-token">--ui-status-info</div>
+          <div class="color-hex-row" onclick="copyHex('#0369A1')">
+            <span class="color-hex">#0369A1</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Penanda angka revisi (r), status embargo SCHEDULED, ikon (i).</div>
+        </div>
+      </div>
+
+      <!-- Provisional Text -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #9A3412;">
+          <span class="badge-contrast">&ge; 5.0:1</span>
+        </div>
+        <div class="color-card-body">
+          <div class="color-name">Sangat Sementara (**)</div>
+          <div class="color-token">--ui-status-provisional</div>
+          <div class="color-hex-row" onclick="copyHex('#9A3412')">
+            <span class="color-hex">#9A3412</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Penanda khusus angka sangat sementara (**), pembeda tegas dari (*).</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- SECTION 5: PALET VISUALISASI DATA ECHARTS (COLOR-BLIND SAFE) -->
+    <div class="section-title">
+      <span>5. Palet Visualisasi Data Apache ECharts (8 Kategori Okabe-Ito)</span>
+      <span class="section-subtitle">Aman bagi penyandang buta warna untuk Treemap Sektor & Bar Chart</span>
+    </div>
+
+    <div class="palette-grid">
+      <!-- 1. Biru Utama -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #004A8F;"></div>
+        <div class="color-card-body">
+          <div class="color-name">1. Biru Utama BPS</div>
+          <div class="color-token">ECharts Series [0]</div>
+          <div class="color-hex-row" onclick="copyHex('#004A8F')">
+            <span class="color-hex">#004A8F</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Sektor terbesar (mis. Industri Pengolahan) & total bar.</div>
+        </div>
+      </div>
+
+      <!-- 2. Biru Cerah -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #0072B2;"></div>
+        <div class="color-card-body">
+          <div class="color-name">2. Biru Cerah</div>
+          <div class="color-token">ECharts Series [1]</div>
+          <div class="color-hex-row" onclick="copyHex('#0072B2')">
+            <span class="color-hex">#0072B2</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Sektor kedua terbesar (mis. Pertanian, Kehutanan & Perikanan).</div>
+        </div>
+      </div>
+
+      <!-- 3. Hijau Kebiruan -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #009E73;"></div>
+        <div class="color-card-body">
+          <div class="color-name">3. Hijau Kebiruan / Teal</div>
+          <div class="color-token">ECharts Series [2]</div>
+          <div class="color-hex-row" onclick="copyHex('#009E73')">
+            <span class="color-hex">#009E73</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Sektor ketiga (mis. Perdagangan Besar & Eceran).</div>
+        </div>
+      </div>
+
+      <!-- 4. Kuning Emas -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #E69F00;"></div>
+        <div class="color-card-body">
+          <div class="color-name">4. Kuning Emas</div>
+          <div class="color-token">ECharts Series [3]</div>
+          <div class="color-hex-row" onclick="copyHex('#E69F00')">
+            <span class="color-hex">#E69F00</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Sektor keempat (Konstruksi). Wajib teks label gelap #0F172A.</div>
+        </div>
+      </div>
+
+      <!-- 5. Oranye Kemerahan -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #D55E00;"></div>
+        <div class="color-card-body">
+          <div class="color-name">5. Oranye Kemerahan</div>
+          <div class="color-token">ECharts Series [4]</div>
+          <div class="color-hex-row" onclick="copyHex('#D55E00')">
+            <span class="color-hex">#D55E00</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Sektor kelima (Transportasi & Pergudangan).</div>
+        </div>
+      </div>
+
+      <!-- 6. Biru Langit -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #56B4E9;"></div>
+        <div class="color-card-body">
+          <div class="color-name">6. Biru Langit</div>
+          <div class="color-token">ECharts Series [5]</div>
+          <div class="color-hex-row" onclick="copyHex('#56B4E9')">
+            <span class="color-hex">#56B4E9</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Sektor keenam (Jasa Keuangan & Asuransi). Wajib teks label gelap.</div>
+        </div>
+      </div>
+
+      <!-- 7. Magenta Lembut -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #CC79A7;"></div>
+        <div class="color-card-body">
+          <div class="color-name">7. Magenta Lembut</div>
+          <div class="color-token">ECharts Series [6]</div>
+          <div class="color-hex-row" onclick="copyHex('#CC79A7')">
+            <span class="color-hex">#CC79A7</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Sektor ketujuh (Informasi & Komunikasi).</div>
+        </div>
+      </div>
+
+      <!-- 8. Abu-abu Netral -->
+      <div class="color-card">
+        <div class="color-swatch-box" style="background-color: #64748B;"></div>
+        <div class="color-card-body">
+          <div class="color-name">8. Abu-abu Netral</div>
+          <div class="color-token">ECharts Series [7]</div>
+          <div class="color-hex-row" onclick="copyHex('#64748B')">
+            <span class="color-hex">#64748B</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="color-desc">Khusus kategori gabungan sektor minor ("Lainnya").</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Toast Notification on Copy -->
+  <div id="copy-toast">
+    <span>✓</span>
+    <span id="copy-toast-text">Kode hex disalin!</span>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const isDark = body.classList.toggle('dark-mode');
+      const icon = document.getElementById('themeIcon');
+      const label = document.getElementById('themeLabel');
+
+      if (isDark) {
+        icon.textContent = '☀️';
+        label.textContent = 'Kembali ke Mode Terang (#F8FAFC)';
+      } else {
+        icon.textContent = '🌙';
+        label.textContent = 'Ubah Latar ke Mode Gelap (#0B1120)';
+      }
+    }
+
+    function copyHex(hex) {
+      navigator.clipboard.writeText(hex).then(() => {
+        const toast = document.getElementById('copy-toast');
+        const toastText = document.getElementById('copy-toast-text');
+        toastText.textContent = `Kode hex ${hex} disalin ke clipboard!`;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2200);
+      });
+    }
+  </script>
+</body>
+</html>
