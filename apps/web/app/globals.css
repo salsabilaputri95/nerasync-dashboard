@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Warna Semantik — Light Mode (Default) */
+  --ui-bg: #f8fafc;
+  --ui-surface: #ffffff;
+  --ui-surface-alt: #f1f5f9;
+
+  --ui-text-primary: #0f172a;
+  --ui-text-secondary: #334155;
+  --ui-text-muted: #64748b;
+
+  --ui-border: #e2e8f0;
+  --ui-border-strong: #64748b;
+  --ui-focus-ring: #004a8f;
+  --ui-overlay: rgba(15, 23, 42, 0.55);
+
+  --ui-primary: #004a8f;
+  --ui-primary-hover: #003a70;
+  --ui-on-primary: #ffffff;
+  --ui-primary-subtle: #eff6ff;
+  --ui-secondary: #15803d;
+  --ui-accent: #c2410c;
+
+  --ui-status-success: #046c4e;
+  --ui-status-success-bg: #ecfdf5;
+  --ui-status-warning: #b45309;
+  --ui-status-warning-bg: #fef3c7;
+  --ui-status-error: #c81e1e;
+  --ui-status-error-bg: #fef2f2;
+  --ui-status-info: #0369a1;
+  --ui-status-info-bg: #f0f9ff;
+  --ui-status-provisional: #9a3412;
+  --ui-status-provisional-bg: #ffedd5;
+
+  --ui-disabled-bg: #f1f5f9;
+  --ui-disabled-text: #64748b;
+
+  /* Radius & Elevation */
+  --ui-radius-sm: 4px;
+  --ui-radius-md: 8px;
+  --ui-radius-lg: 12px;
+  --ui-radius-pill: 9999px;
+
+  --ui-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --ui-shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --ui-shadow-lg: 0 12px 28px rgba(15, 23, 42, 0.16);
+
+  /* Motion */
+  --ui-dur-fast: 120ms;
+  --ui-dur-base: 200ms;
+  --ui-dur-slow: 280ms;
+  --ui-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.dark {
+  --ui-bg: #0b1120;
+  --ui-surface: #111827;
+  --ui-surface-alt: #1e293b;
+
+  --ui-text-primary: #f8fafc;
+  --ui-text-secondary: #cbd5e1;
+  --ui-text-muted: #94a3b8;
+
+  --ui-border: #1e293b;
+  --ui-border-strong: #64748b;
+  --ui-focus-ring: #60a5fa;
+  --ui-overlay: rgba(0, 0, 0, 0.72);
+
+  --ui-primary: #60a5fa;
+  --ui-primary-hover: #93c5fd;
+  --ui-on-primary: #0b1120;
+  --ui-primary-subtle: #1e3a5f;
+  --ui-secondary: #34d399;
+  --ui-accent: #fb923c;
+
+  --ui-status-success: #34d399;
+  --ui-status-success-bg: #064e3b;
+  --ui-status-warning: #fbbf24;
+  --ui-status-warning-bg: #451a03;
+  --ui-status-error: #f87171;
+  --ui-status-error-bg: #450a0a;
+  --ui-status-info: #38bdf8;
+  --ui-status-info-bg: #0c4a6e;
+  --ui-status-provisional: #fdba74;
+  --ui-status-provisional-bg: #431407;
+
+  --ui-disabled-bg: #1e293b;
+  --ui-disabled-text: #64748b;
+}
+
+@layer base {
+  body {
+    background-color: var(--ui-bg);
+    color: var(--ui-text-primary);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-avoid-break {
+    break-inside: avoid;
+  }
+}

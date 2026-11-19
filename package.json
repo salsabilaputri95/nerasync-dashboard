@@ -1,0 +1,17 @@
+{
+  "name": "nerasync-dashboard",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev:web": "pnpm --filter web dev",
+    "build:web": "pnpm --filter web build",
+    "lint:web": "pnpm --filter web lint",
+    "format:check:web": "pnpm --filter web format:check",
+    "typecheck:web": "pnpm --filter web typecheck",
+    "test:web": "pnpm --filter web test"
+  }
+}
