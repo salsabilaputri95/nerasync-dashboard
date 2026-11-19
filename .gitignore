@@ -53,8 +53,14 @@ out/
 build/
 dist/
 .open-next/
+apps/web/.open-next/
+.wrangler/
 .turbo/
 .cache/
+
+# Python Virtual Environments
+.venv/
+venv/
 
 # ------------------------------------------------------------------------------
 # 4. ARTEFAK KOMPILASI BACKEND & WORKER (Go / Koyeb / CLI)

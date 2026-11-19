@@ -1,0 +1,35 @@
+version: "2"
+
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+
+linters:
+  enable:
+    - errcheck
+    - govet
+    - staticcheck
+    - unused
+    - gosec
+    - sqlclosecheck
+    - contextcheck
+    - depguard
+  settings:
+    depguard:
+      rules:
+        domain_stdlib_only:
+          list-mode: strict
+          files:
+            - "**/internal/domain/**/*.go"
+          allow:
+            - $gostd
+        http_no_spreadsheet_sdk:
+          list-mode: lax
+          files:
+            - "**/internal/http/**/*.go"
+          deny:
+            - pkg: "github.com/xuri/excelize"
+              desc: "Handler HTTP dilarang memparsing spreadsheet langsung; delegasikan ke internal/sync."
+            - pkg: "google.golang.org/api"
+              desc: "Handler HTTP dilarang memanggil Google API langsung; delegasikan ke internal/sync."

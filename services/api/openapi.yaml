@@ -1,0 +1,107 @@
+openapi: 3.1.0
+info:
+  title: SINERGI Public & Operational API
+  version: 0.1.0-f0
+  description: Kontrak REST API baseline Fase F0 (walking skeleton). Kontrak endpoint dataset lengkap mengikuti docs/DATA_MODEL.md §7.
+servers:
+  - url: http://localhost:8080
+paths:
+  /healthz:
+    get:
+      summary: Liveness check backend Go
+      responses:
+        "200":
+          description: Layanan hidup
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthReport"
+  /readyz:
+    get:
+      summary: Readiness check backend + koneksi database publik
+      responses:
+        "200":
+          description: Layanan siap menerima trafik
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReadinessReport"
+        "503":
+          description: Database belum siap atau tidak dapat dijangkau
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ProblemDetails"
+  /api/v1/public/ping:
+    get:
+      summary: Walking skeleton ping endpoint
+      responses:
+        "200":
+          description: Respons Hello SINERGI
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PublicPingResponse"
+components:
+  schemas:
+    HealthReport:
+      type: object
+      required: [status, service, phase, timestamp]
+      properties:
+        status:
+          type: string
+          example: ok
+        service:
+          type: string
+          example: sinergi-api
+        phase:
+          type: string
+          example: F0
+        timestamp:
+          type: string
+          format: date-time
+    ReadinessReport:
+      type: object
+      required: [status, database, service, timestamp]
+      properties:
+        status:
+          type: string
+          example: ready
+        database:
+          type: string
+          example: up
+        service:
+          type: string
+          example: sinergi-api
+        timestamp:
+          type: string
+          format: date-time
+    PublicPingResponse:
+      type: object
+      required: [message, service, phase]
+      properties:
+        message:
+          type: string
+          example: Hello SINERGI
+        service:
+          type: string
+          example: sinergi-api
+        phase:
+          type: string
+          example: F0
+    ProblemDetails:
+      type: object
+      required: [type, title, status, detail, instance]
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        instance:
+          type: string
+        request_id:
+          type: string
